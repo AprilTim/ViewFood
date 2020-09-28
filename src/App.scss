@@ -1,0 +1,262 @@
+@import "_normalize.scss";
+
+$mainColor: #F28F3B;
+$secondColor: #C8553D;
+$lightColor: #fff;
+$darkColor: #333232;
+$shadow: rgba(59, 65, 60, 0.15);
+
+/*$darkColor: #3B413C;*/
+
+body {
+  color: $darkColor;
+  background-color: $lightColor;
+}
+
+#root {
+  width: inherit;
+  height: inherit;
+}
+
+.input {
+  border: none;
+  outline: none;
+
+  width: 100%;
+  padding: 0.5em;
+  color: $darkColor;
+  background-color: rgba(59, 65, 60, 0.1);
+  border-radius: 4px;
+}
+
+.button {
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: $lightColor;
+  background: linear-gradient( 45deg, $secondColor, $mainColor);
+  border-radius: 4px;
+
+  &_circle {
+    padding: 0;
+    height: 1em;
+    width: 1em;
+    font-size: 36px;
+    line-height: 1em;
+    border-radius: 50%;
+  }
+
+  &_square {
+    padding: 0;
+    width: 1em;
+    height: 1em;
+
+    font-size: 24px;
+  }
+
+  &_outline {
+    color: $mainColor;
+    background: none;
+  }
+}
+
+.burger {
+  height: 20px;
+  width: 28px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  border: none;
+  outline: none;
+  background: none;
+
+  span {
+    height: 4px;
+    width: 28px;
+    background-color: white;
+  }
+
+  &:before {
+    display: block;
+    content: '';
+    height: 4px;
+    width: 28px;
+    background-color: white;
+  }
+
+  &:after {
+    display: block;
+    content: '';
+    height: 4px;
+    width: 28px;
+    background-color: white;
+  }
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  background-color: $secondColor;
+
+  span {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px $shadow;
+  }
+}
+
+.content {
+  min-height: 100vh;
+  padding-top: 50px;
+  display: flex;
+}
+
+.sidebar {
+  padding: 1em 0 0 1em;
+  width: 249px;
+  height: inherit;
+  background-color: $darkColor;
+
+  .show {
+    display: flex;
+  }
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &_item {
+    color: $mainColor;
+    margin-bottom: 15px;
+    padding: 1em;
+    font-size: 20px;
+  }
+}
+
+.calculator {
+  margin: 0 auto;
+  padding: 15px 75px 0;
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  &_container {
+    width: 100%;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: center;
+    align-items: center;
+  }
+
+  &_result {
+    margin: 15px auto;
+    padding: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: $mainColor;
+    border-radius: 4px;
+    background-color: $darkColor;
+
+    span {
+      color: white;
+      font-size: 20px;
+    }
+
+    button {
+      margin: 15px 0;
+      width: 25%;
+      min-width: 100px;
+    }
+  }
+}
+
+.food {
+  padding: 0 10px 10px;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 2px solid $mainColor;
+  box-shadow: 0 0 15px $shadow;
+
+  &_control {
+    width: 100%;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  &_name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &_nutrient {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &_item {
+      margin: 5px;
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &_result {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 975px) {
+
+  .burger {
+    display: flex;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .calculator {
+    padding: 15px 25px 0;
+  }
+}
+
